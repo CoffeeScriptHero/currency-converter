@@ -1,0 +1,36 @@
+.page-header {
+  background-color: darkcyan;
+  height: 70px;
+}
+.page-header .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  font-size: 21px;
+  font-weight: 600;
+}
+.logo-additional {
+  font-size: 14px;
+  margin-left: 10px;
+}
+.error-message {
+  color: red;
+  margin-left: 40px;
+}
+.currencies-rate-wrapper {
+  display: flex;
+  margin-left: 40px;
+}
+.exchange-rate-wrapper:not(:last-child) {
+  margin-right: 50px;
+}
+.currency-value {
+  text-decoration: underline;
+  font-size: 18px;
+}

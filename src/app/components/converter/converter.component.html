@@ -1,0 +1,50 @@
+<div class="container">
+  <section class="converter">
+    <h1 class="converter-title">Currency converter 🌐</h1>
+    <div class="converter-inner-wrapper">
+      <div class="currency-wrapper">
+        <span class="currency-name">{{ getFlag(firstSelect) }}</span>
+        <input
+          name="first-input"
+          class="converter-input"
+          type="number"
+          (input)="convert()"
+          [(ngModel)]="firstInput"
+        />
+        <select
+          name="first-select"
+          class="select"
+          [(ngModel)]="firstSelect"
+          (change)="convert()"
+        >
+          <option *ngFor="let cur of currencies" [ngValue]="cur">
+            {{ cur }}
+          </option>
+        </select>
+      </div>
+      <button class="convert-button" (click)="convert(true)">
+        <svg-icon name="convert-arrows" svgClass="convert-svg"></svg-icon>
+      </button>
+      <div class="currency-wrapper">
+        <span class="currency-name">{{ getFlag(secondSelect) }}</span>
+        <input
+          name="second-input"
+          class="converter-input"
+          type="number"
+          [(ngModel)]="secondInput"
+          (input)="convert(false, true)"
+        />
+        <select
+          name="second-select"
+          class="select"
+          [(ngModel)]="secondSelect"
+          (change)="convert()"
+        >
+          <option *ngFor="let cur of currencies" [ngValue]="cur">
+            {{ cur }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </section>
+</div>

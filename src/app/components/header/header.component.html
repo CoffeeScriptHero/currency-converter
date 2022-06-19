@@ -1,0 +1,18 @@
+<header class="page-header">
+  <div class="container">
+    <div class="logo-wrapper">
+      <span class="logo">Exchange rates</span>
+      <span class="logo-additional">(for UAH)</span>
+    </div>
+    <span class="error-message" *ngIf="errorMessage">{{ errorMessage }}</span>
+    <div class="currencies-rate-wrapper" *ngIf="dataLoaded">
+      <div
+        class="exchange-rate-wrapper"
+        *ngFor="let currency of currenciesRateList"
+      >
+        <span class="currency-name">{{ currency.name }}: </span>
+        <span class="currency-value">{{ currency.baseCurrencyValue }}</span>
+      </div>
+    </div>
+  </div>
+</header>
